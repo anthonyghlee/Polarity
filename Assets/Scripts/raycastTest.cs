@@ -11,7 +11,7 @@ public class raycastTest : MonoBehaviour
     {
         
     }
-
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -28,5 +28,5 @@ public class raycastTest : MonoBehaviour
                 hit.transform.GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
-    }
+    } */
 }
