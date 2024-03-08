@@ -2256,7 +2256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &966091277
 Transform:
   m_ObjectHideFlags: 0
@@ -3325,6 +3325,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: cb077ba2-e0e7-4fac-bac8-1bb023e8d44f
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf58cef1-5782-4e9f-b074-2042cc094540
+    m_ActionName: Player/Magnet[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
