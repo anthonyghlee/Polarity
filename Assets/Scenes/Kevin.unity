@@ -3214,7 +3214,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e51c77d75618541b4e6a1f76698748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Player Death
+    clip: {fileID: 8300000, guid: 4b4dd7245f6104c8c8eb07ccf6b386ed, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Player Jump
+    clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Magnet Active
+    clip: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Magnet Stick
+    clip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Background Music
+    clip: {fileID: 8300000, guid: 70b11bf620ea41043a07888402a26e6a, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
 --- !u!4 &1755680409
 Transform:
   m_ObjectHideFlags: 0

@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && IsGrounded())
         {
-            // jumpSoundEffect.Play();
+            FindObjectOfType<audioManager>().Play("Player Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 

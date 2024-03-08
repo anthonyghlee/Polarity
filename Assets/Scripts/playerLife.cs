@@ -20,7 +20,7 @@ public class playerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            // deathSoundEffect.Play();
+            FindObjectOfType<audioManager>().Play("Player Death");
             Die();
 
         }
