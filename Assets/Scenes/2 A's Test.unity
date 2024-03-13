@@ -3769,6 +3769,22 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1858867144}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 318a11f3-3281-4a6e-b64e-432814a003aa
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858867144}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -3783,12 +3799,12 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 670d623d-595b-4df7-93c8-3c328deac5d5
-    m_ActionName: Player/ToggleRepel[/Keyboard/shift]
+    m_ActionId: cf58cef1-5782-4e9f-b074-2042cc094540
+    m_ActionName: Player/Magnet[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 318a11f3-3281-4a6e-b64e-432814a003aa
-    m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d]
+    m_ActionId: 670d623d-595b-4df7-93c8-3c328deac5d5
+    m_ActionName: Player/ToggleRepel[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
