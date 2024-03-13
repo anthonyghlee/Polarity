@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trap
+  - Ground
+  - Magnetic
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Magnetic
   - Water
   - UI
   - ground

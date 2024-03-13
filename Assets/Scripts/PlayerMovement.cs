@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public LayerMask magneticLayer;
     public float speed = 5f;
     public float jumpingPower = 8f;
 
@@ -74,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && IsGrounded())
         {
-            // jumpSoundEffect.Play();
+            FindObjectOfType<audioManager>().Play("Player Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
@@ -87,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, magneticLayer));
     }
 
     private void Flip()
@@ -101,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+
     }
 
 }
