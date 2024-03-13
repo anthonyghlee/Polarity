@@ -7,7 +7,6 @@ TagManager:
   - Trap
   - Ground
   - Magnetic
-  - Gamer
   layers:
   - Default
   - TransparentFX
