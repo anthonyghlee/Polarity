@@ -225,20 +225,13 @@ public class MagneticFunction : MonoBehaviour
         }
     }
 
-    void OnToggleRepel()
-    {
-        ToggleRepel();
-    }
 
-    private void ToggleRepel()
+
+    public void ToggleRepel(InputAction.CallbackContext context)
     {
-        if(isRepel == false)
+        if(context.performed)
         {
-            isRepel = true;
-        }
-        else
-        {
-            isRepel = false;
+            isRepel = !isRepel;
         }
     }
 

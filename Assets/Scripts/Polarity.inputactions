@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Toggle Repel",
+                    "name": "ToggleRepel",
                     "type": "Button",
                     "id": "670d623d-595b-4df7-93c8-3c328deac5d5",
                     "expectedControlType": "Button",
@@ -85,7 +85,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Toggle Repel",
+                    "action": "ToggleRepel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
