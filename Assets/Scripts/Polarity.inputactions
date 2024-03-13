@@ -15,18 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Magnet",
-                    "type": "Value",
-                    "id": "cf58cef1-5782-4e9f-b074-2042cc094540",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "cb077ba2-e0e7-4fac-bac8-1bb023e8d44f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleRepel",
+                    "type": "Button",
+                    "id": "670d623d-595b-4df7-93c8-3c328deac5d5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -79,59 +79,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "WASD",
-                    "id": "a312f1e3-ba3a-4a42-8adb-4f3e96dfc333",
-                    "path": "Dpad",
+                    "name": "",
+                    "id": "94cfa9e3-fbeb-42c5-a795-947e8f052751",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Magnet",
-                    "isComposite": true,
+                    "action": "ToggleRepel",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "e5314005-fde6-4ff7-a4e9-747f83fc56b4",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Magnet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "45b53b6c-1bdf-4626-858d-e6093340d3fb",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Magnet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "1bf3f4f4-84cb-404f-b194-e39bde6361d0",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Magnet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "9fd5d115-59c9-4df7-ac0b-28addd6ff96a",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Magnet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
