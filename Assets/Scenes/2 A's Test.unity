@@ -3335,6 +3335,9 @@ PrefabInstance:
       addedObject: {fileID: 1858867145}
     - targetCorrespondingSourceObject: {fileID: 9052089230544007439, guid: d3fa423e46bab134e8a78433a7986876, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1858867154}
+    - targetCorrespondingSourceObject: {fileID: 9052089230544007439, guid: d3fa423e46bab134e8a78433a7986876, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1858867144}
     - targetCorrespondingSourceObject: {fileID: 9052089230544007439, guid: d3fa423e46bab134e8a78433a7986876, type: 3}
       insertIndex: -1
@@ -3354,9 +3357,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9052089230544007439, guid: d3fa423e46bab134e8a78433a7986876, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1858867152}
-    - targetCorrespondingSourceObject: {fileID: 9052089230544007439, guid: d3fa423e46bab134e8a78433a7986876, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1858867154}
   m_SourcePrefab: {fileID: 100100000, guid: d3fa423e46bab134e8a78433a7986876, type: 3}
 --- !u!1 &734060111
 GameObject:
@@ -7085,6 +7085,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 670d623d-595b-4df7-93c8-3c328deac5d5
     m_ActionName: Player/ToggleRepel[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858867154}
+        m_TargetAssemblyTypeName: MagneticFunction, Assembly-CSharp
+        m_MethodName: Magnet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e92c3967-6066-4c98-85e2-d913fedb2063
+    m_ActionName: Player/Magnet[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -7330,6 +7346,8 @@ MonoBehaviour:
   magStrengthVert: 3
   magStrengthHoriz: 5
   castDistance: 7
+  horizmagdir: 0
+  vertmagdir: 0
 --- !u!1001 &1869669916
 PrefabInstance:
   m_ObjectHideFlags: 0

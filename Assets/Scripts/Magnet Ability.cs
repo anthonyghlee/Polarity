@@ -11,13 +11,16 @@ public class MagneticFunction : MonoBehaviour
     [SerializeField] float magStrengthVert = 1f;
     [SerializeField] float magStrengthHoriz = 5f;
     [SerializeField] float castDistance = 5f;
+    
+    public float horizmagdir;
+    public float vertmagdir;
 
     bool isGrounded = false;
     bool isRepel = false;
-    bool isHitUp = false;
-    bool isHitDown = false;
-    bool isHitRight = false;
-    bool isHitLeft = false;
+    bool isUpArrow = false;
+    bool isDownArrow = false;
+    bool isRightArrow = false;
+    bool isLeftArrow = false;
     
     // Start is called before the first frame update
     void Start()
@@ -28,47 +31,37 @@ public class MagneticFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            MagnetUp(); 
-        }
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    MagnetUp(); 
+        //}
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            MagnetDown(); 
-        }
+        //if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    MagnetDown(); 
+        //}
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            MagnetRight(); 
-        }
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    MagnetRight(); 
+        //}
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            MagnetLeft(); 
-        }
-    }
-
-    void MagnetUp()
-    {
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //   MagnetLeft(); 
+        //}
         int magneticLayerMask = LayerMask.GetMask("Magnetic");
 
-        RaycastHit2D raycastHit = Physics2D.Raycast (transform.position, Vector2.up, castDistance, magneticLayerMask);
+        RaycastHit2D raycastHitUp = Physics2D.Raycast (transform.position, Vector2.up, castDistance, magneticLayerMask);
+        RaycastHit2D raycastHitDown = Physics2D.Raycast (transform.position, Vector2.down, castDistance, magneticLayerMask);
+        RaycastHit2D raycastHitRight = Physics2D.Raycast (transform.position, Vector2.right, castDistance, magneticLayerMask);
+        RaycastHit2D raycastHitLeft = Physics2D.Raycast (transform.position, Vector2.left, castDistance, magneticLayerMask);
 
-        Rigidbody2D hitRb = raycastHit.rigidbody.GetComponent<Rigidbody2D>();
+        if (raycastHitUp.collider != null && raycastHitUp.rigidbody != null)
+        {
+            Rigidbody2D hitRbUp = raycastHitUp.rigidbody.GetComponent<Rigidbody2D>();
 
-        if (raycastHit.collider != null)
-        {
-            isHitUp = true;
-        }
-        else
-        {
-            isHitUp = false;
-        }
-
-        if(isHitUp == true)
-        {
-            if (isGrounded == false)
+            if(isUpArrow == true && isGrounded == false)
             {
                 if(isRepel == false)
                 {
@@ -79,40 +72,24 @@ public class MagneticFunction : MonoBehaviour
                     rb.AddForce(Vector2.up * magStrengthVert * -1f, ForceMode2D.Force);
                 }
             }
-            else
+            else if(isUpArrow == true && isGrounded == true)
             {
                 if(isRepel == false)
                 {
-                    hitRb.AddForce(Vector2.down * magStrengthVert, ForceMode2D.Force);
+                    hitRbUp.AddForce(Vector2.down * magStrengthVert, ForceMode2D.Force);
                 }
                 else
                 {
-                    hitRb.AddForce(Vector2.down * magStrengthVert * -1f, ForceMode2D.Force);
+                    hitRbUp.AddForce(Vector2.down * magStrengthVert * -1f, ForceMode2D.Force);
                 }
             }
         }
-    }
 
-    void MagnetDown()
-    {
-        int magneticLayerMask = LayerMask.GetMask("Magnetic");
-
-        RaycastHit2D raycastHit = Physics2D.Raycast (transform.position, Vector2.down, castDistance, magneticLayerMask);
-
-        Rigidbody2D hitRb = raycastHit.rigidbody.GetComponent<Rigidbody2D>();
-
-        if (raycastHit.collider != null)
+        if (raycastHitDown.collider != null && raycastHitDown.rigidbody != null)
         {
-            isHitDown = true;
-        }
-        else
-        {
-            isHitDown = false;
-        }
+            Rigidbody2D hitRbDown = raycastHitDown.rigidbody.GetComponent<Rigidbody2D>();
 
-        if(isHitDown == true)
-        {
-            if (isGrounded == false)
+            if(isDownArrow == true && isGrounded == false)
             {
                 if(isRepel == false)
                 {
@@ -123,40 +100,24 @@ public class MagneticFunction : MonoBehaviour
                     rb.AddForce(Vector2.down * magStrengthVert * -1f, ForceMode2D.Force);
                 }
             }
-            else
+            else if(isDownArrow == true && isGrounded == true)
             {
                 if(isRepel == false)
                 {
-                    hitRb.AddForce(Vector2.up * magStrengthVert, ForceMode2D.Force);
+                    hitRbDown.AddForce(Vector2.up * magStrengthVert, ForceMode2D.Force);
                 }
                 else
                 {
-                    hitRb.AddForce(Vector2.up * magStrengthVert * -1f, ForceMode2D.Force);
+                    hitRbDown.AddForce(Vector2.up * magStrengthVert * -1f, ForceMode2D.Force);
                 }
             }
         }
-    }
 
-    void MagnetRight()
-    {
-        int magneticLayerMask = LayerMask.GetMask("Magnetic");
-
-        RaycastHit2D raycastHit = Physics2D.Raycast (transform.position, Vector2.right, castDistance, magneticLayerMask);
-
-        Rigidbody2D hitRb = raycastHit.rigidbody.GetComponent<Rigidbody2D>();
-
-        if (raycastHit.collider != null)
+        if (raycastHitRight.collider != null && raycastHitRight.rigidbody != null)
         {
-            isHitRight = true;
-        }
-        else
-        {
-            isHitRight = false;
-        }
+            Rigidbody2D hitRbRight = raycastHitRight.rigidbody.GetComponent<Rigidbody2D>();
 
-        if(isHitRight == true)
-        {
-            if (isGrounded == false)
+            if(isRightArrow == true && isGrounded == false)
             {
                 if(isRepel == false)
                 {
@@ -167,40 +128,24 @@ public class MagneticFunction : MonoBehaviour
                     rb.AddForce(Vector2.right * magStrengthHoriz * -1f, ForceMode2D.Force);
                 }
             }
-            else
+            else if(isRightArrow == true && isGrounded == true)
             {
                 if(isRepel == false)
                 {
-                    hitRb.AddForce(Vector2.left * magStrengthVert, ForceMode2D.Force);
+                    hitRbRight.AddForce(Vector2.left * magStrengthHoriz, ForceMode2D.Force);
                 }
                 else
                 {
-                    hitRb.AddForce(Vector2.left * magStrengthVert * -1f, ForceMode2D.Force);
+                    hitRbRight.AddForce(Vector2.left * magStrengthHoriz * -1f, ForceMode2D.Force);
                 }
             }
         }
-    }
 
-    void MagnetLeft()
-    {
-        int magneticLayerMask = LayerMask.GetMask("Magnetic");
-
-        RaycastHit2D raycastHit = Physics2D.Raycast (transform.position, Vector2.left, castDistance, magneticLayerMask);
-
-        Rigidbody2D hitRb = raycastHit.rigidbody.GetComponent<Rigidbody2D>();
-
-        if (raycastHit.collider != null)
+        if (raycastHitLeft.collider != null && raycastHitLeft.rigidbody != null)
         {
-            isHitLeft = true;
-        }
-        else
-        {
-            isHitLeft = false;
-        }
+            Rigidbody2D hitRbLeft = raycastHitLeft.rigidbody.GetComponent<Rigidbody2D>();
 
-        if(isHitLeft == true)
-        {
-            if (isGrounded == false)
+            if(isLeftArrow == true && isGrounded == false)
             {
                 if(isRepel == false)
                 {
@@ -211,21 +156,67 @@ public class MagneticFunction : MonoBehaviour
                     rb.AddForce(Vector2.left * magStrengthHoriz * -1f, ForceMode2D.Force);
                 }
             }
-            else
+            else if(isLeftArrow == true && isGrounded == true)
             {
                 if(isRepel == false)
                 {
-                    hitRb.AddForce(Vector2.right * magStrengthVert, ForceMode2D.Force);
+                    hitRbLeft.AddForce(Vector2.right * magStrengthHoriz, ForceMode2D.Force);
                 }
                 else
                 {
-                    hitRb.AddForce(Vector2.right * magStrengthVert * -1f, ForceMode2D.Force);
+                    hitRbLeft.AddForce(Vector2.right * magStrengthHoriz * -1f, ForceMode2D.Force);
                 }
             }
         }
     }
 
+    void Magnet(InputAction.CallbackContext context)
+    {
+        horizmagdir = context.ReadValue<Vector2>().x;
+        vertmagdir = context.ReadValue<Vector2>().y;
 
+        Debug.Log("Input");
+
+        if (horizmagdir == 1f && context.performed)
+        {
+            isRightArrow = true;
+            Debug.Log("Right");
+        }
+        else
+        {
+            isRightArrow = false;
+        }
+
+        if  (horizmagdir == -1f && context.performed)
+        {
+            isLeftArrow = true;
+            Debug.Log("Left");
+        }
+        else
+        {
+            isLeftArrow = false;
+        }
+
+        if (vertmagdir == 1f && context.performed)
+        {
+            isUpArrow = true;
+            Debug.Log("Up");
+        }
+        else
+        {
+            isUpArrow = false;
+        }
+
+        if (vertmagdir == -1f && context.performed)
+        {
+            isDownArrow = true;
+            Debug.Log("Down");
+        }
+        else
+        {
+            isDownArrow = false;
+        }
+    }
 
     public void ToggleRepel(InputAction.CallbackContext context)
     {
