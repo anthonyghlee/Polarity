@@ -8,9 +8,9 @@ public class MagneticFunction : MonoBehaviour
     
     Rigidbody2D rb;
 
-    [SerializeField] float magStrengthVert = 1f;
+    [SerializeField] float magStrengthVert = 3f;
     [SerializeField] float magStrengthHoriz = 5f;
-    [SerializeField] float castDistance = 5f;
+    [SerializeField] float castDistance = 7f;
     
     public float horizmagdir;
     public float vertmagdir;
