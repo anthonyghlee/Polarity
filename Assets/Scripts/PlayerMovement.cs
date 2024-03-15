@@ -13,15 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 6f;
     public float jumpingPower = 8f;
 
-    //private Animator animator;
+    private Animator animator;
 
     [SerializeField] private AudioSource jumpSoundEffect;
 
     private float horizontal;
     private bool isFacingRight = true;
 
-    //private enum MovementState { idle, running, jumping, falling }
-    //private MovementState state;
+    private enum MovementState { idle, left, right }
+    private MovementState state;
 
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // sprite = GetComponent<RigidBody2D>();
 
-        // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,22 +40,30 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isFacingRight && horizontal > 0.1f)
         {
-            Flip();
+            //Flip();
             // sprite.flipX = false;
+
         }
         else if (isFacingRight && horizontal < -0.1f)
         {
-            Flip();
+            //Flip();
             // sprite.flipX = true;
+
         }
 
-        if (horizontal != 0f)
+        if (horizontal < -0.1f)
         {
+            state = MovementState.left;
             // state = MovementState.running;
         }
-        else
+        else if (horizontal > 0.1f)
         {
+            state = MovementState.right;
             // state = MovementState.idle;
+        }
+        else if(horizontal == 0)
+        {
+            state = MovementState.idle;
         }
 
         if (rb.velocity.y > 0.1f)
@@ -67,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
             // state = MovementState.falling;
         }
 
-        // animator.SetInteger("state", (int)state);
-
+        animator.SetInteger("state", (int)state);
+        Debug.Log((int)state);
     }
 
     public void Jump(InputAction.CallbackContext context)
