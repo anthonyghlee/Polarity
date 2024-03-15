@@ -176,48 +176,43 @@ public class MagneticFunction : MonoBehaviour
 
         Debug.Log("Input");
 
-        if (horizmagdir == 1f && context.performed)
+        if (context.performed)
         {
-            isRightArrow = true;
-            Debug.Log("Right");
+            if (horizmagdir == 1f)
+            {
+                isRightArrow = true;
+                Debug.Log("Right");
+                FindObjectOfType<audioManager>().Play("Magnet Sound");
+            }
+            else if (horizmagdir == -1f)
+            {
+                isLeftArrow = true;
+                Debug.Log("Left");
+                FindObjectOfType<audioManager>().Play("Magnet Sound");
+            }
+            else if (vertmagdir == 1f)
+            {
+                isUpArrow = true;
+                Debug.Log("Up");
+                FindObjectOfType<audioManager>().Play("Magnet Sound");
+            }
+            else if (vertmagdir == -1f)
+            {
+                isDownArrow = true;
+                Debug.Log("Down");
+                FindObjectOfType<audioManager>().Play("Magnet Sound");
+            }
         }
-        else
+        else if (context.canceled)
         {
             isRightArrow = false;
-        }
-
-        if  (horizmagdir == -1f && context.performed)
-        {
-            isLeftArrow = true;
-            Debug.Log("Left");
-        }
-        else
-        {
             isLeftArrow = false;
-        }
-
-        if (vertmagdir == 1f && context.performed)
-        {
-            isUpArrow = true;
-            Debug.Log("Up");
-        }
-        else
-        {
             isUpArrow = false;
-        }
-
-        if (vertmagdir == -1f && context.performed)
-        {
-            isDownArrow = true;
-            Debug.Log("Down");
-        }
-        else
-        {
             isDownArrow = false;
+            FindObjectOfType<audioManager>().Stop("Magnet Sound");
         }
     }
-
-    public void ToggleRepel(InputAction.CallbackContext context)
+        public void ToggleRepel(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
