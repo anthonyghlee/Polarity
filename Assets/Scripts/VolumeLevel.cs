@@ -4,17 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-public class VolumeSlider : MonoBehaviour
+public class VolumeLevel : MonoBehaviour
 {
-    public static VolumeSlider instance;
-    
-    [SerializeField] public Slider slider;
+    // Start is called before the first frame update
+
+    [SerializeField] private Slider slider;
     [SerializeField] AudioMixer mixer;
 
-    // Start is called before the first frame update
     void Start()
     {
-        slider.value = 65f;
+        slider.value = VolumeSlider.instance.slider.value;
     }
 
     // Update is called once per frame
