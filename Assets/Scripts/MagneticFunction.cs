@@ -7,8 +7,8 @@ public class MagneticFunction : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    [SerializeField] float magStrengthVert = 3f;
-    [SerializeField] float magStrengthHoriz = 5f;
+    [SerializeField] float magStrengthVert = 60f;
+    [SerializeField] float magStrengthHoriz = 100f;
     [SerializeField] float castDistance = 7f;
     
     public float horizmagdir;
@@ -28,7 +28,7 @@ public class MagneticFunction : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //if (Input.GetKey(KeyCode.UpArrow))
         //{

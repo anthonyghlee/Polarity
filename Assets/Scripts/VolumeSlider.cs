@@ -6,13 +6,15 @@ using UnityEngine.Audio;
 
 public class VolumeSlider : MonoBehaviour
 {
+    public static VolumeSlider instance;
+    
     [SerializeField] private Slider slider;
     [SerializeField] AudioMixer mixer;
 
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = 50f;
+        slider.value = 65f;
     }
 
     // Update is called once per frame
