@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class MagneticFunction : MonoBehaviour
 {
-    
     Rigidbody2D rb;
 
     [SerializeField] float magStrengthVert = 3f;
