@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class MagneticFunction : MonoBehaviour
@@ -20,11 +21,14 @@ public class MagneticFunction : MonoBehaviour
     bool isDownArrow = false;
     bool isRightArrow = false;
     bool isLeftArrow = false;
-    
+
+    public Image square;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        square.color = Color.red;
     }
 
     // Update is called once per frame
@@ -212,12 +216,22 @@ public class MagneticFunction : MonoBehaviour
             FindObjectOfType<audioManager>().Stop("Magnet Sound");
         }
     }
-        public void ToggleRepel(InputAction.CallbackContext context)
+    public void ToggleRepel(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
             FindObjectOfType<audioManager>().Play("Magnet Switch");
             isRepel = !isRepel;
+
+            if(square.color == Color.blue)
+            {
+                square.color = Color.red;
+            }
+            else
+            {
+                square.color = Color.blue;
+            }
+
         }
     }
 

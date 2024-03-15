@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
 
-    [SerializeField] private AudioSource jumpSoundEffect;
 
     private float horizontal;
     private bool isFacingRight = true;
