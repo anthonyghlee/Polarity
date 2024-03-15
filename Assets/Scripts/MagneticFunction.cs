@@ -216,6 +216,7 @@ public class MagneticFunction : MonoBehaviour
     {
         if(context.performed)
         {
+            FindObjectOfType<audioManager>().Play("Magnet Switch");
             isRepel = !isRepel;
         }
     }

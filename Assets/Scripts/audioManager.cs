@@ -30,7 +30,6 @@ public class audioManager : MonoBehaviour
             s.audioSource.volume = s.volume;
             s.audioSource.pitch = s.pitch;
             s.audioSource.loop = s.loop;
-            s.audioSource.mute = s.mute;
         }
     }
 
