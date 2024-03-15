@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Anthony's Scenes/AnthonyUI.unity
     guid: d0cc5e796a2fd4ce8bdf0b5246dbb2c1
+  - enabled: 1
+    path: Assets/Scenes/Anthony's Scenes/AnthonyEndScreen.unity
+    guid: eff3a43982a354da3bb7009366f61ebe
   m_configObjects: {}

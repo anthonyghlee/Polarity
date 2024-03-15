@@ -17,4 +17,9 @@ public class MainMenu : MonoBehaviour
         // the tutorial uses unity build like as a file, not on itch
     }
 
+    public void BackToMain()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+
 }
