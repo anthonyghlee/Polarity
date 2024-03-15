@@ -20,6 +20,6 @@ public class VolumeSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mixer.SetFloat("BGMVolume", slider.value - 80f);
+        mixer.SetFloat("MasterVolume", slider.value - 80f);
     }
 }
