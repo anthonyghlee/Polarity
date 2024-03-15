@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Anthony's Scenes/AnthonyStart.unity
+    guid: 8813ab4c32a204853b3fbd156a051812
+  - enabled: 0
+    path: Assets/Scenes/2 A's Test.unity
+    guid: 3adf4b77985744374a3b2f9a98594c17
+  - enabled: 0
+    path: Assets/Scenes/Anthony's Scenes/AnthonyUI.unity
+    guid: d0cc5e796a2fd4ce8bdf0b5246dbb2c1
+  - enabled: 1
+    path: Assets/Scenes/Anthony's Scenes/AnthonyLevel1.unity
+    guid: b735efaca9b614ec4a8af46072d3bbaa
+  - enabled: 1
+    path: Assets/Scenes/Anthony's Scenes/AnthonyEndScreen.unity
+    guid: eff3a43982a354da3bb7009366f61ebe
   m_configObjects: {}

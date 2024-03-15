@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public LayerMask magneticLayer;
-    public float speed = 5f;
+    public float speed = 6f;
     public float jumpingPower = 8f;
 
     //private Animator animator;

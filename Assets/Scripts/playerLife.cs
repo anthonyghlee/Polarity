@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class playerLife : MonoBehaviour
 {
     // private Animator animator;
     private Rigidbody2D rb;
-
+    
     // [SerializeField] private AudioSource deathSoundEffect;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,11 @@ public class playerLife : MonoBehaviour
             Die();
 
         }
+
+        if (collision.gameObject.CompareTag("End"))
+        {
+            SceneManager.LoadSceneAsync(2);
+        }
     }
 
     private void Die()
@@ -31,7 +37,7 @@ public class playerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         RestartLevel();
         // animator.SetTrigger("death");
-
+        //DeathCounter.instance.IncreaseDeaths;
     }
 
     private void RestartLevel()
