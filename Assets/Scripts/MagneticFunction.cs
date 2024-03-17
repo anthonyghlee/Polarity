@@ -186,26 +186,25 @@ public class MagneticFunction : MonoBehaviour
             {
                 isRightArrow = true;
                 Debug.Log("Right");
-                FindObjectOfType<audioManager>().Play("Magnet Sound");
+
             }
             else if (horizmagdir == -1f)
             {
                 isLeftArrow = true;
                 Debug.Log("Left");
-                FindObjectOfType<audioManager>().Play("Magnet Sound");
             }
             else if (vertmagdir == 1f)
             {
                 isUpArrow = true;
                 Debug.Log("Up");
-                FindObjectOfType<audioManager>().Play("Magnet Sound");
             }
             else if (vertmagdir == -1f)
             {
                 isDownArrow = true;
                 Debug.Log("Down");
-                FindObjectOfType<audioManager>().Play("Magnet Sound");
+
             }
+            FindObjectOfType<audioManager>().Play("Magnet Sound");
         }
         else if (context.canceled)
         {

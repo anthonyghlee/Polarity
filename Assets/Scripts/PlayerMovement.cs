@@ -37,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, magneticLayer))
+        {
+            Debug.Log("touchingMagIOSDJFOISDJFOISDJFOSDIJFSODIFJSODIFJ");
+        }
+
         if (!isFacingRight && horizontal > 0.1f)
         {
             //Flip();
@@ -95,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, magneticLayer));
+        return (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, 0.1f, magneticLayer));
     }
 
     private void Flip()
